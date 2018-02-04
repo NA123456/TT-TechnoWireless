@@ -1,0 +1,29 @@
+﻿.create-btn {
+    margin-bottom:5px;
+}
+
+.table-header {
+    border: solid lightgrey 1px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.table-data {
+       border: solid lightgrey 1px;
+    border-radius: 5px;
+    padding: 10px;
+       margin-top:5px;
+    margin-bottom:5px;
+}
+
+.error {
+color:red;
+}
+
+#EditCourseForm > h3 {
+
+margin-top:20px;
+}

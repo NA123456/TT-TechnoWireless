@@ -1,0 +1,144 @@
+﻿@model IEnumerable<TT.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/css/technoWireless.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Content/js/technoWireless.js"></script>
+
+<h2>Students</h2><hr />
+
+
+<div class="row table-header">
+    <div class="col-md-2">First Name</div>
+    <div class="col-md-2">Last Name</div>
+    <div class="col-md-1">Phone</div>
+    <div class="col-md-1">Mobile</div>
+    <div class="col-md-1">Address</div>
+    <div class="col-md-2">User Name</div>
+    <div class="col-md-1">Approved</div>
+    <div class="col-md-2">Course Name</div>
+</div>
+
+@foreach (var item in Model)
+{
+
+    <div class="row table-data">
+        <div class="col-md-2">@item.FirstName</div>
+        <div class="col-md-2">@item.LastName</div>
+        <div class="col-md-1">
+            @if (item.Phone != null)
+            {
+                @item.Phone
+            }
+            else
+            {
+                <span class="label label-default"> NotSet</span>
+            }
+        </div>
+        <div class="col-md-1">
+            @if (item.Mobile_ != null)
+            {
+                @item.Mobile_
+            }
+            else
+            {
+                <span class="label label-default"> NotSet</span>
+            }
+        </div>
+        <div class="col-md-1">
+            @if (item.Address != null)
+            {
+                @item.Address
+            }
+            else
+            {
+                <span class="label label-default"> NotSet</span>
+            }
+        </div>
+        <div class="col-md-2">@item.UserName</div>
+        <div class="col-md-1">
+            <input hidden class="user-id" value="@item.Id" />
+            @if (item.Approved == true)
+            {
+                @Html.CheckBox("Approved", true, new { @class = "approved" })
+            }
+            else
+            {
+                @Html.CheckBox("Approved", false, new { @class = "approved" })
+            }
+        </div>
+        <div class="col-md-2">
+            @{
+                IEnumerable<TT.Models.Course> courses = ViewBag.courses;
+            }
+
+            @Html.DropDownListFor(modelitem => item.CourseId, new SelectList(courses, "Id", "CourseName",item.CourseId), "Select Course", new { @class = "course-ddl" })
+
+            @*@if (item.CourseId != null)
+                    {@item.Course.CourseName}
+                else
+                {
+                    <span class="label label-default"> NotSet</span>
+                }*@
+        </div>
+    </div>
+}
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Approve A user</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input hidden class="item-id" value="" />
+                <input hidden class="is-approve" value="" />
+                <p class="modal-paragraph"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" onclick="Approve()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Approve A user</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input hidden class="item-id" value="" />
+                <input hidden class="course-id" value="" />
+                Are you sure that you want to change the course for this user?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" onclick="changeCourse()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

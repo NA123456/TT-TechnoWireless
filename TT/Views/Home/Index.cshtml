@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dashboard</h2>
+<div class="container-fluid" style="background-color:#fff;margin-top:10px;">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3 account-item">
+                <a href="@Url.Action("Index","Students")">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3"><i class="fa fa-users fa-2x" aria-hidden="true"></i></div>
+                        <div class="col-md-9 col-xs-9">
+                            <h4>Students</h4>
+                            <div>
+                                <span>get List of students </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 account-item">
+                <a href="@Url.Action("Index","Courses")">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3"><i class="fa fa-book fa-2x" aria-hidden="true"></i></div>
+                        <div class="col-md-9 col-xs-9">
+                            <h4>Courses</h4>
+                            <div>
+                                <span>get List of courses </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .account-item {
+    border: 1px solid #ddd;
+    /*margin-right:20px;*/
+    padding: 10px;
+    margin-top: 8px;
+    display: inline-block;
+    width: 330px;
+    margin-right: 8px;
+    
+    height: 96px;
+}
+
+.account-item h4 {
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    color:black;
+
+}
+
+.account-item img, .account-item i {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+</style>

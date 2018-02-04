@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:local="clr-namespace:TT_Mobile"
+   x:Class="TT_Mobile.SignUpPage">
+
+
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry  Placeholder="First Name" x:Name="FN" Grid.Row="0"
+ 		Grid.Column="1" >
+              
+            </Entry>
+            <Label x:Name="FN_error_msg" TextColor="Red" FontAttributes="Italic"/>
+
+<Entry Placeholder="Last Name" x:Name="LN"/>
+            <Label x:Name="LN_error_msg" TextColor="Red" FontAttributes="Italic"/>
+
+            <Entry Placeholder="Phone" ClassId="phone" x:Name="phone">
+                <Entry.Behaviors>
+                    <local:NumberValidation/>
+                </Entry.Behaviors>
+            </Entry>
+            <Label x:Name="phone_error_msg" TextColor="Red" FontAttributes="Italic"/>
+
+            <Entry Placeholder="Mobile" ClassId="mobile" x:Name="mobile">
+                <Entry.Behaviors>
+                    <local:NumberValidation/>
+                </Entry.Behaviors>
+            </Entry>
+            <Label x:Name="mobile_error_msg" TextColor="Red" FontAttributes="Italic"/>
+
+            <Entry Placeholder="Address" x:Name="address"/>
+
+            <Entry Placeholder="User Name" x:Name="email">
+                <Entry.Behaviors>
+                    <local:SignUpBehavior/>
+                </Entry.Behaviors>
+            </Entry>
+            <Label x:Name="email_error_msg" TextColor="Red" FontAttributes="Italic"/>
+
+            <Entry Placeholder="Password" IsPassword="True" x:Name="pass"/>
+            <Label x:Name="pass_error_msg" TextColor="Red" FontAttributes="Italic"/>
+
+            <Button Text="Sign Up" Clicked="SignUp"/>
+            <Label x:Name="signup_error" TextColor="Red"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

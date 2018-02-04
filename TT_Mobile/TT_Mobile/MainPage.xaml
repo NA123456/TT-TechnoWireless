@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TT_Mobile"
+             x:Class="TT_Mobile.MainPage"
+             Title="LoginIn">
+
+    <!--<Label Text="Welcome to Xamarin Forms!"     
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />-->
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" >
+            <Label Text="Username" />
+            <Entry x:Name="usernameEntry" Placeholder="username" />
+            <Label Text="Password" />
+            <Entry x:Name="passwordEntry" IsPassword="true" />
+            <Button Text="Login" Clicked="OnLoginButtonClicked" />
+            <Label x:Name="messageLabel" />
+
+            <Button Text="Sign Up" Clicked="OnSignUpButtonClicked" />
+
+        </StackLayout>
+    </ContentPage.Content>-->
+
+    <StackLayout Orientation="Vertical">
+
+        <Entry Placeholder="User Name" x:Name="email">
+            <Entry.Behaviors>
+                <local:SignUpBehavior/>
+            </Entry.Behaviors>
+        </Entry>
+        <Label x:Name="email_error_msg" TextColor="Red" FontAttributes="Italic"/>
+        
+        <Entry IsPassword="True" Placeholder="Password" x:Name="pass"/>
+        <Label x:Name="pass_error_msg" TextColor="Red" FontAttributes="Italic"/>
+
+        <Button Clicked="SignIn" Text="LogIn"/>
+
+        <Label x:Name="login_error" TextColor="Red"/>
+        
+        <Button Clicked="SignUp" Text="Sign Up" VerticalOptions="End"/>
+
+    </StackLayout>
+
+</ContentPage>

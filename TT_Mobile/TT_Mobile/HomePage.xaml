@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TT_Mobile.HomePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="First Name:" Grid.Row="0" Grid.Column="0"/>
+            <Label x:Name="FN" Grid.Row="0" Grid.Column="1"/>
+
+
+            <Label Text="Last Name:" Grid.Row="1" Grid.Column="0"/>
+            <Label x:Name="LN" Grid.Row="1" Grid.Column="1"/>
+
+            <Label Text="Phone:" Grid.Row="2" Grid.Column="0"/>
+            <Label x:Name="phone" Grid.Row="2" Grid.Column="1"/>
+
+            <Label Text="mobile:" Grid.Row="3" Grid.Column="0"/>
+            <Label x:Name="mobile" Grid.Row="3" Grid.Column="1"/>
+
+            <Label Text="address:" Grid.Row="4" Grid.Column="0"/>
+            <Label x:Name="address" Grid.Row="4" Grid.Column="1"/>
+
+            <Label Text="Course Name:" Grid.Row="5" Grid.Column="0"/>
+            <Label x:Name="CourseName" Grid.Row="5" Grid.Column="1"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
